@@ -7,6 +7,7 @@ body {
     color: #333;
 }
 
+/* General Header Styling */
 header {
     background-color: #333;
     color: white;
@@ -14,8 +15,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;  /* Make the header sticky */
+    top: 0;            /* Stick the header to the top of the page */
+    z-index: 1000;     /* Ensure the header stays on top of other elements */
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow for better visibility */
 }
 
+/* The rest of the header styling remains unchanged */
 header .logo {
     font-size: 28px;
     font-weight: bold;
