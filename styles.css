@@ -53,24 +53,27 @@ nav ul li a:hover {
 
 .carousel-images {
     display: flex;
+    gap: 20px; /* This will add space between the images */
     animation: slide 9s infinite ease-in-out;
 }
 
 .carousel-images img {
-    width: 100%;
+    width: calc(100% - 20px);  /* Adjust image width to account for the space between them */
     height: 400px;
     object-fit: cover;
+    border-radius: 8px;
 }
 
+/* Animation for sliding the images */
 @keyframes slide {
     0% {
         transform: translateX(0);
     }
     33% {
-        transform: translateX(-100%);
+        transform: translateX(-calc(100% + 20px)); /* Adjust the translation to account for the gap */
     }
     66% {
-        transform: translateX(-200%);
+        transform: translateX(-calc(200% + 40px)); /* Adjust the translation to account for the gap */
     }
     100% {
         transform: translateX(0);
