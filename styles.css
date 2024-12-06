@@ -61,7 +61,7 @@ nav ul li a:hover {
 .carousel-images {
     display: flex;
     gap: 20px; /* This will add space between the images */
-    animation: slide 9s infinite ease-in-out;
+    animation: slide 3s infinite ease-in-out;
 }
 
 .carousel-images img {
