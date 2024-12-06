@@ -8,22 +8,22 @@ function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem('cart'));
     cart.push({ name: name, price: price });
     localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartCount();
+    
+    updateCartDisplay();
 }
 
-// Function to update the cart count in the header
-function updateCartCount() {
+// Function to update the cart count and show items
+function updateCartDisplay() {
     let cart = JSON.parse(localStorage.getItem('cart'));
-    document.getElementById('cart-count').textContent = cart.length;
-}
-
-// Function to view the cart
-function viewCart() {
-    let cart = JSON.parse(localStorage.getItem('cart'));
+    let cartCount = document.getElementById('cart-count');
     let cartItemsContainer = document.getElementById('cart-items');
     let cartTotal = 0;
-    cartItemsContainer.innerHTML = ''; // Clear the cart items
 
+    // Update the cart count
+    cartCount.textContent = cart.length;
+
+    // Update the cart items list
+    cartItemsContainer.innerHTML = '';  // Clear the existing items
     cart.forEach(item => {
         let li = document.createElement('li');
         li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
@@ -31,7 +31,12 @@ function viewCart() {
         cartTotal += item.price;
     });
 
+    // Update the total price
     document.getElementById('cart-total').textContent = cartTotal.toFixed(2);
+}
+
+// Function to view the cart
+function viewCart() {
     document.getElementById('cart').style.display = 'block';
 }
 
@@ -43,7 +48,7 @@ function closeCart() {
 // Function to clear the cart
 function clearCart() {
     localStorage.setItem('cart', JSON.stringify([]));
-    updateCartCount();
+    updateCartDisplay();
     closeCart();
 }
 
@@ -53,4 +58,4 @@ function checkout() {
     clearCart();
 }
 
-updateCartCount();
+updateCartDisplay();  // Initialize cart display
