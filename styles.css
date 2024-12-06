@@ -14,14 +14,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;  /* Make the header sticky */
-    top: 0;            /* Stick the header to the top of the page */
-    z-index: 1000;     /* Ensure the header stays on top of other elements */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow for better visibility */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo and Navigation */
 header .logo {
     font-size: 28px;
     font-weight: bold;
@@ -49,7 +48,22 @@ nav ul li a:hover {
     color: #ff4081;
 }
 
-/* Carousel Styling */
+/* Hamburger Menu for Mobile */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+/* Image Carousel */
 .carousel {
     position: relative;
     overflow: hidden;
@@ -59,12 +73,12 @@ nav ul li a:hover {
 
 .carousel-images {
     display: flex;
-    gap: 20px; /* This will add space between the images */
-    animation: slide 9s infinite ease-in-out; /* Slide every 3 seconds */
+    gap: 20px;
+    animation: slide 9s infinite ease-in-out;
 }
 
 .carousel-images img {
-    width: calc(100% - 20px);  /* Adjust image width to account for the space between them */
+    width: calc(100% - 20px);
     height: 400px;
     object-fit: cover;
     border-radius: 8px;
@@ -76,10 +90,10 @@ nav ul li a:hover {
         transform: translateX(0);
     }
     33% {
-        transform: translateX(-calc(100% + 20px)); /* Adjust the translation to account for the gap */
+        transform: translateX(-calc(100% + 20px));
     }
     66% {
-        transform: translateX(-calc(200% + 40px)); /* Adjust the translation to account for the gap */
+        transform: translateX(-calc(200% + 40px));
     }
     100% {
         transform: translateX(0);
@@ -205,6 +219,44 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Adjust logo and navigation */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .logo {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    /* Show hamburger menu */
+    .hamburger-menu {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    /* When the menu is open, display the menu items */
+    nav ul.show {
+        display: flex;
+    }
+
+    /* Stack products vertically */
     .product-list {
         flex-direction: column;
         align-items: center;
@@ -213,6 +265,10 @@ footer {
     .product {
         width: 90%;
         margin-bottom: 20px;
+    }
+
+    .carousel-images img {
+        height: 300px;
     }
 
     .cart {
