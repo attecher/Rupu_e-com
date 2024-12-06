@@ -14,11 +14,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 header .logo {
@@ -46,21 +41,6 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #ff4081;
-}
-
-/* Hamburger Menu for Mobile */
-.hamburger-menu {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.hamburger-menu .bar {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    transition: transform 0.3s ease;
 }
 
 /* Carousel Styling */
@@ -214,46 +194,43 @@ footer {
     padding: 20px 0;
 }
 
+/* Pop-up Modal Styling */
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.popup-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-close {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+}
+
+.popup-show {
+    display: block;
+    opacity: 1;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* Adjust logo and navigation */
-    header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header .logo {
-        font-size: 24px;
-        margin-bottom: 15px;
-    }
-
-    /* Show hamburger menu */
-    .hamburger-menu {
-        display: flex;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    nav ul li a {
-        font-size: 18px;
-    }
-
-    /* When the menu is open, display the menu items */
-    nav ul.show {
-        display: flex;
-    }
-
-    /* Stack products vertically */
     .product-list {
         flex-direction: column;
         align-items: center;
@@ -262,10 +239,6 @@ footer {
     .product {
         width: 90%;
         margin-bottom: 20px;
-    }
-
-    .carousel-images img {
-        height: 300px;
     }
 
     .cart {
