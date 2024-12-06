@@ -7,7 +7,6 @@ body {
     color: #333;
 }
 
-/* General Header Styling */
 header {
     background-color: #333;
     color: white;
@@ -22,7 +21,7 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow for better visibility */
 }
 
-/* The rest of the header styling remains unchanged */
+/* Logo and Navigation */
 header .logo {
     font-size: 28px;
     font-weight: bold;
@@ -61,7 +60,7 @@ nav ul li a:hover {
 .carousel-images {
     display: flex;
     gap: 20px; /* This will add space between the images */
-    animation: slide 3s infinite ease-in-out;
+    animation: slide 9s infinite ease-in-out; /* Slide every 3 seconds */
 }
 
 .carousel-images img {
@@ -202,41 +201,6 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0;
-}
-
-/* Pop-up Modal Styling */
-.popup {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1000;
-}
-
-.popup-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.popup-close {
-    font-size: 24px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: white;
-}
-
-.popup-show {
-    display: block;
-    opacity: 1;
 }
 
 /* Responsive Design */
