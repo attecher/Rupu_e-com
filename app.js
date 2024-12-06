@@ -10,6 +10,9 @@ function addToCart(name, price) {
     localStorage.setItem('cart', JSON.stringify(cart));
     
     updateCartDisplay();
+
+    // Show the pop-up notification
+    showPopup(name);
 }
 
 // Function to update the cart count and show items
@@ -56,6 +59,21 @@ function clearCart() {
 function checkout() {
     alert('Thank you for your purchase!');
     clearCart();
+}
+
+// Function to show the pop-up
+function showPopup(itemName) {
+    const popup = document.getElementById('popup');
+    const popupMessage = document.getElementById('popup-message');
+    popupMessage.textContent = `${itemName} added to cart!`;
+    
+    // Show the pop-up
+    popup.classList.add('popup-show');
+
+    // Hide the pop-up after 3 seconds
+    setTimeout(function() {
+        popup.classList.remove('popup-show');
+    }, 3000);
 }
 
 updateCartDisplay();  // Initialize cart display
