@@ -76,10 +76,4 @@ function showPopup(itemName) {
     }, 3000);
 }
 
-// Toggle menu visibility for mobile
-function toggleMenu() {
-    const menu = document.querySelector('nav ul');
-    menu.classList.toggle('show');
-}
-
 updateCartDisplay();  // Initialize cart display
